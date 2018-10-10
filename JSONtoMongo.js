@@ -11,7 +11,7 @@ var fs = require('fs'),
 
 
 /* Connect to your database */
-mongoose.connect(config.db.uri, function(err, res){
+mongoose.connect(config.db.uri, {useMongoClient: true}, function(err, res){
   if(err){
     console.log('Cannot connect to ' + config.db.uri + '.' + err);
   } else {
